@@ -14,6 +14,9 @@ $(function(){
 		} else if(move1 !== false){
 			move2 = $(this);
 			console.log(move2.attr("data-num"));
+
+
+
 			//console.log(move2.attr("#box5"));
 /*			move1 = $(move1).html("");
 			move2 = $(move2).html("");*/
@@ -24,6 +27,10 @@ $(function(){
 	}
 );
 
-var id = parseInt(this.id); //19
+function checkValidMove(){
+	var id = parseInt(this.id); //19
     --id; 
-var previousbox = $("#box" + id); //box18
+	var preHop = $("#box" + id); //box18
+	move2 = $(this);
+	console.log("preHop");
+};
