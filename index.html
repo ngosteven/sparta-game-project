@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Working Title</title>
+		<title>Solitaire</title>
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 		<script type="text/javascript" src="js/index.js" async></script>
@@ -10,16 +10,11 @@
 		<table>
 			<tr>
 			    <td>
-			    	<p>Timer: <time>00:00:00</time></p>
-			    	<p>Moves: </p>
+			    	<p>Timer: <label id="minutes">00</label>:<label id="seconds">00</label></p>
+			    	<p>Moves: <label id="place">0</label></p>
 			    </td>
 			    <td>
 			      	<table>
-			        	<tr>
-			          		<td></td>
-			          		<td></td>
-			          		<td></td>
-			        	</tr>
 			        	<tr>
 			          		<td class="peg" data-num="3" id="box3">O</td>
 			          		<td class="peg" data-num="4" id="box4">O</td>
@@ -31,6 +26,8 @@
 			          		<td class="peg" data-num="12" id="box12">O</td>
 			        	</tr>
 			      	</table>
+			    </td>
+			    <td>
 			    </td>
 			</tr>
 			<tr>
@@ -94,7 +91,6 @@
 			</tr>
 			<tr>
 				<td>
-					<p>Reset</p>
 			    </td>
 			    <td>
 			      	<table>
@@ -108,12 +104,10 @@
 			          		<td class="peg" data-num="46" id="box46">O</td>
 			          		<td class="peg" data-num="47" id="box47">O</td>
 			        	</tr>
-			        	<tr>
-			          		<td></td>
-			          		<td></td>
-			          		<td></td>
-			        	</tr>
 			      	</table>
+			    </td>
+			    <td>
+					<p><button class="buttonEnd">End Board</button></p>
 			    </td>
 			</tr>
 		</table>

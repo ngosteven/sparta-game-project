@@ -1,14 +1,19 @@
 /*body { font-family: 'Helvetica' }*/
+body {
+  background-image: url('../images/boardfelt.png');
+}
+
 table {
   margin: 0 auto;
-  border-radius: 500px;
+  background-color: maroon;
 }
 td {
-  border: 1px solid black;
-  width: 160px;
+  border: 3px solid black;
+  width: 170px;
   height: 50px;
   text-align: center;
   font-size: 20px;
+  background-color: khaki;
 }
 
 /*.X {
