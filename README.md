@@ -3,88 +3,56 @@ Solitaire
 
 A Sparta Global game project.
 
+## How to run
+1. Download the project folder
+2. Open index.html
+
 ## Purpose
+The purpose of this project was to create and build a browser based game using html, css, and Javascript.
 
-This is a sample HTML5 / JS / CSS SPA (Single Page Application) developed with AngularJS.
+This project also serves to consolodate two weeks of learning html, css and Javascript, and demonstrate a range of skills in a one week project.
 
-Markup has been styled to be responsive, according to the device used to view the app.
+The progression of the project was noted using git that allows to split the project objectives into stages, and github was used to protect and save a working project while branching off the main project to make any additional changes to the project.
 
-It is intended as a demonstration of technical capabilities rather than design or helpful data. :-)
+## Synopsis
+This game is based off a puzzle board game called Solitaire. On this board, there are 33 holes indented on the board which holds 32 balls.
 
-Note also that it is a work in progress; you can check out what features are in the pipeline in the [issues](#issues) list.
+The objectve of the game is to complete the board by having only one ball remaining left on the board. The process of removing the balls is to take a ball and hop over an adjacent ball directly on the selected balls' x-axis or y-axis into a free space where a ball is not occupying a hole. 
+
+The player carries on this method of play until there are no further moves to make. Once the player has completed all the moves they can, the game tallies the score by counting how many balls are left on the board. The goal of the puzzle game is to have one ball remaining.
 
 ## Functionality
 
-This is a simple application that displays several pages, including profile information for a list of people.
+The functionality of the game is dependant on the choices the player makes when selecting their method, and in the positioning of the balls that can be calculated mathematically.
 
-The sample data is contrived, but shows how the data is stored in JSON format, retrieved via AJAX,
-and inserted into HTML templates.
-
-## Implementation
-
-The functionality has been implemented using the following features:
-
-* AngularJS 1.2, documented
-* Twitter Bootstrap 3.2
-* Javascript validated with JSHint and JSCS
-* automated CI build on code repo change
-* semantic HTML5
-* well-structured CSS built with LESS
-* responsive web development/design (no separate m-dot site)
-* page content sourced via XHR service call with JSON response (static)
-* multi-browser unit testing with Jasmine & Karma
-* grunt-driven builds to dev and prod distributions
-
-## Usage
-
-### Building
-
-Fork/clone this repo, then:
+* The board is designed in mind of a 7x7 grid so each hole represents a number.
+* The puzzle does not utilise all the numbers in the grid therefore some numbers are not included
+* The important detail of the grid is the relationship between the numbers and their placement on the grid
 
 ``` sh
-$ bower install && npm install
-# build the dev distribution:
-$ grunt dev
-# run the unit tests:
-$ grunt test
-# just build the docs
-$ grunt docs
-# build the prod distribution (includes clean, test & docs) :
-$ grunt prod
+01 02 |03 04 05| 06 07
+08 09 |10 11 12| 13 14
+______          ______
+15 16  17 18 19  20 21
+22 23  24 25 26  27 28
+29 30  31 32 33  34 35
+______          ______
+36 37 |38 39 40| 41 42
+43 44 |45 46 47| 48 49 
 ```
 
-### Running
+* From this grid, it can be seen that the x-axis moves either way by 1 and y-axis moves either way by 7.
 
-Set up local web servers to point to `dist/dev` and `dist/prod` for _dev_ and _prod_ distributions, respectively.
+* Considering that the player can only choose a ball, that hops over another ball, into a free space, the numbers help calucalte the parameter of where the player clicked and its median value
 
-### Customising
+* For example player choose 23 and hops over 24 into space 25, the game calulates this move by collecting the values of 23 and 25 (the selected ball and free space) and calulates the two numbers median which is 24 (the hopped ball).
 
-To customise the content, modify the contents of the following files:
+* The recognises whether the player has amade an move on the x-axis by seeing the difference between the numbers. If it is on x-axis, the difference the game looks for is 2. If it is on y-axis, the difference the game looks for is 14.
 
-* `svc/*/*.json`
-* `src/js/app/*/*/*.html`
+* Finally there is a function that allows the game to count how many balls are left on the table to see how far the player reached.
 
-### Viewing the docs
+## Built with
 
-Build the docs, fire up a web server with `dist/docs` as the webroot, and point your browser to [`localhost:8001`](http://localhost:8001):
-
-``` sh
-$ ( grunt docs && cd dist/docs && python -m SimpleHTTPServer 8001 )
-```
-
-## Issues
-
-The github issue system holds the issues for this project:
-
-* [all](https://github.com/mcalthrop/angular-spa-demo/issues)
-* [bugs](https://github.com/mcalthrop/angular-spa-demo/labels/bug)
-* [enhancements](https://github.com/mcalthrop/angular-spa-demo/labels/enhancement)
-* [investigate](https://github.com/mcalthrop/angular-spa-demo/labels/investigate)
-
-## Demo site
-
-[mcalthrop.github.io/angular-spa-demo/](http://mcalthrop.github.io/angular-spa-demo/)
-
-This site is kept up to date with the latest code in the codebase.
-
-## License
+* HTML5
+* CSS3
+* JavaScript
